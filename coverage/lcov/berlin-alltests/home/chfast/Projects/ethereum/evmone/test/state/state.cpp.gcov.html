@@ -1,0 +1,249 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>LCOV - berlin.lcov - /home/chfast/Projects/ethereum/evmone/test/state/state.cpp</title>
+  <link rel="stylesheet" type="text/css" href="../../../../../../../gcov.css">
+</head>
+
+<body>
+
+  <table width="100%" border=0 cellspacing=0 cellpadding=0>
+    <tr><td class="title">LCOV - code coverage report</td></tr>
+    <tr><td class="ruler"><img src="../../../../../../../glass.png" width=3 height=3 alt=""></td></tr>
+
+    <tr>
+      <td width="100%">
+        <table cellpadding=1 border=0 width="100%">
+          <tr>
+            <td width="10%" class="headerItem">Current view:</td>
+            <td width="35%" class="headerValue"><a href="../../../../../../../index.html">top level</a> - <a href="index.html">home/chfast/Projects/ethereum/evmone/test/state</a> - state.cpp<span style="font-size: 80%;"> (source / <a href="state.cpp.func-sort-c.html">functions</a>)</span></td>
+            <td width="5%"></td>
+            <td width="15%"></td>
+            <td width="10%" class="headerCovTableHead">Hit</td>
+            <td width="10%" class="headerCovTableHead">Total</td>
+            <td width="15%" class="headerCovTableHead">Coverage</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Test:</td>
+            <td class="headerValue">berlin.lcov</td>
+            <td></td>
+            <td class="headerItem">Lines:</td>
+            <td class="headerCovTableEntry">73</td>
+            <td class="headerCovTableEntry">79</td>
+            <td class="headerCovTableEntryHi">92.4 %</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Date:</td>
+            <td class="headerValue">2022-12-13 14:01:58</td>
+            <td></td>
+            <td class="headerItem">Functions:</td>
+            <td class="headerCovTableEntry">7</td>
+            <td class="headerCovTableEntry">7</td>
+            <td class="headerCovTableEntryHi">100.0 %</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="headerItem">Branches:</td>
+            <td class="headerCovTableEntry">53</td>
+            <td class="headerCovTableEntry">80</td>
+            <td class="headerCovTableEntryLo">66.2 %</td>
+          </tr>
+          <tr><td><img src="../../../../../../../glass.png" width=3 height=3 alt=""></td></tr>
+        </table>
+      </td>
+    </tr>
+
+    <tr><td class="ruler"><img src="../../../../../../../glass.png" width=3 height=3 alt=""></td></tr>
+  </table>
+
+  <table cellpadding=0 cellspacing=0 border=0>
+    <tr>
+      <td><br></td>
+    </tr>
+    <tr>
+      <td>
+<pre class="sourceHeading">           Branch data     Line data    Source code</pre>
+<pre class="source">
+<a name="1"><span class="lineNum">       1 </span>                :            : // evmone: Fast Ethereum Virtual Machine implementation</a>
+<a name="2"><span class="lineNum">       2 </span>                :            : // Copyright 2022 The evmone Authors.</a>
+<a name="3"><span class="lineNum">       3 </span>                :            : // SPDX-License-Identifier: Apache-2.0</a>
+<a name="4"><span class="lineNum">       4 </span>                :            : </a>
+<a name="5"><span class="lineNum">       5 </span>                :            : #include &quot;state.hpp&quot;</a>
+<a name="6"><span class="lineNum">       6 </span>                :            : #include &quot;host.hpp&quot;</a>
+<a name="7"><span class="lineNum">       7 </span>                :            : #include &lt;evmone/evmone.h&gt;</a>
+<a name="8"><span class="lineNum">       8 </span>                :            : #include &lt;evmone/execution_state.hpp&gt;</a>
+<a name="9"><span class="lineNum">       9 </span>                :            : </a>
+<a name="10"><span class="lineNum">      10 </span>                :            : namespace evmone::state</a>
+<a name="11"><span class="lineNum">      11 </span>                :            : {</a>
+<a name="12"><span class="lineNum">      12 </span>                :            : namespace</a>
+<a name="13"><span class="lineNum">      13 </span>                :            : {</a>
+<a name="14"><span class="lineNum">      14 </span>                :<span class="lineCov">      13256 : int64_t compute_tx_data_cost(evmc_revision rev, bytes_view data) noexcept</span></a>
+<a name="15"><span class="lineNum">      15 </span>                :            : {</a>
+<a name="16"><span class="lineNum">      16 </span>                :<span class="lineCov">      13256 :     constexpr int64_t zero_byte_cost = 4;</span></a>
+<a name="17"><span class="lineNum">      17 </span>        [<span class="branchCov" title="Branch 0 was taken 13256 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">      13256 :     const int64_t nonzero_byte_cost = rev &gt;= EVMC_ISTANBUL ? 16 : 68;</span></a>
+<a name="18"><span class="lineNum">      18 </span>                :<span class="lineCov">      13256 :     int64_t cost = 0;</span></a>
+<a name="19"><span class="lineNum">      19 </span>        [<span class="branchCov" title="Branch 0 was taken 2898358 times"> + </span><span class="branchCov" title="Branch 1 was taken 13256 times"> + </span>]:<span class="lineCov">    2911614 :     for (const auto b : data)</span></a>
+<a name="20"><span class="lineNum">      20 </span>        [<span class="branchCov" title="Branch 0 was taken 745604 times"> + </span><span class="branchCov" title="Branch 1 was taken 2152754 times"> + </span>]:<span class="lineCov">    2898358 :         cost += (b == 0) ? zero_byte_cost : nonzero_byte_cost;</span></a>
+<a name="21"><span class="lineNum">      21 </span>                :<span class="lineCov">      13256 :     return cost;</span></a>
+<a name="22"><span class="lineNum">      22 </span>                :            : }</a>
+<a name="23"><span class="lineNum">      23 </span>                :            : </a>
+<a name="24"><span class="lineNum">      24 </span>                :<span class="lineCov">      13256 : int64_t compute_access_list_cost(const AccessList&amp; access_list) noexcept</span></a>
+<a name="25"><span class="lineNum">      25 </span>                :            : {</a>
+<a name="26"><span class="lineNum">      26 </span>                :            :     static constexpr auto storage_key_cost = 1900;</a>
+<a name="27"><span class="lineNum">      27 </span>                :            :     static constexpr auto address_cost = 2400;</a>
+<a name="28"><span class="lineNum">      28 </span>                :            : </a>
+<a name="29"><span class="lineNum">      29 </span>                :<span class="lineCov">      13256 :     int64_t cost = 0;</span></a>
+<a name="30"><span class="lineNum">      30 </span>        [<span class="branchCov" title="Branch 0 was taken 127 times"> + </span><span class="branchCov" title="Branch 1 was taken 13256 times"> + </span>]:<span class="lineCov">      13383 :     for (const auto&amp; a : access_list)</span></a>
+<a name="31"><span class="lineNum">      31 </span>                :<span class="lineCov">        127 :         cost += address_cost + static_cast&lt;int64_t&gt;(a.second.size()) * storage_key_cost;</span></a>
+<a name="32"><span class="lineNum">      32 </span>                :<span class="lineCov">      13256 :     return cost;</span></a>
+<a name="33"><span class="lineNum">      33 </span>                :            : }</a>
+<a name="34"><span class="lineNum">      34 </span>                :            : </a>
+<a name="35"><span class="lineNum">      35 </span>                :<span class="lineCov">      13256 : int64_t compute_tx_intrinsic_cost(evmc_revision rev, const Transaction&amp; tx) noexcept</span></a>
+<a name="36"><span class="lineNum">      36 </span>                :            : {</a>
+<a name="37"><span class="lineNum">      37 </span>                :            :     static constexpr auto call_tx_cost = 21000;</a>
+<a name="38"><span class="lineNum">      38 </span>                :            :     static constexpr auto create_tx_cost = 53000;</a>
+<a name="39"><span class="lineNum">      39 </span>                :<span class="lineCov">      13256 :     const bool is_create = !tx.to.has_value();</span></a>
+<a name="40"><span class="lineNum">      40 </span>  [<span class="branchCov" title="Branch 0 was taken 6286 times"> + </span><span class="branchCov" title="Branch 1 was taken 6970 times"> + </span><span class="branchCov" title="Branch 2 was taken 6286 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span>]:<span class="lineCov">      13256 :     const auto tx_cost = is_create &amp;&amp; rev &gt;= EVMC_HOMESTEAD ? create_tx_cost : call_tx_cost;</span></a>
+<a name="41"><span class="lineNum">      41 </span>  [<span class="branchCov" title="Branch 0 was taken 6286 times"> + </span><span class="branchCov" title="Branch 1 was taken 6970 times"> + </span><span class="branchNoCov" title="Branch 2 was not taken"> - </span><span class="branchCov" title="Branch 3 was taken 6286 times"> + </span>]:<span class="lineCov">      13256 :     const auto initcode_cost = (is_create &amp;&amp; rev &gt;= EVMC_SHANGHAI) ? std::ssize(tx.data) * 2 : 0;</span></a>
+<a name="42"><span class="lineNum">      42 </span>                :<span class="lineCov">      13256 :     return tx_cost + initcode_cost + compute_tx_data_cost(rev, tx.data) +</span></a>
+<a name="43"><span class="lineNum">      43 </span>                :<span class="lineCov">      13256 :            compute_access_list_cost(tx.access_list);</span></a>
+<a name="44"><span class="lineNum">      44 </span>                :            : }</a>
+<a name="45"><span class="lineNum">      45 </span>                :            : </a>
+<a name="46"><span class="lineNum">      46 </span>                :            : /// Validates transaction and computes its execution gas limit (the amount of gas provided to EVM).</a>
+<a name="47"><span class="lineNum">      47 </span>                :            : /// @return  Non-negative execution gas limit for valid transaction</a>
+<a name="48"><span class="lineNum">      48 </span>                :            : ///          or negative value for invalid transaction.</a>
+<a name="49"><span class="lineNum">      49 </span>                :<span class="lineCov">      13266 : int64_t validate_transaction(const Account&amp; sender_acc, const BlockInfo&amp; block,</span></a>
+<a name="50"><span class="lineNum">      50 </span>                :            :     const Transaction&amp; tx, evmc_revision rev) noexcept</a>
+<a name="51"><span class="lineNum">      51 </span>                :            : {</a>
+<a name="52"><span class="lineNum">      52 </span>  [<span class="branchCov" title="Branch 0 was taken 13266 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 3 times"> + </span><span class="branchCov" title="Branch 3 was taken 13263 times"> + </span>]:<span class="lineCov">      13266 :     if (rev &lt; EVMC_LONDON &amp;&amp; tx.kind == Transaction::Kind::eip1559)</span></a>
+<a name="53"><span class="lineNum">      53 </span>                :<span class="lineCov">          3 :         return -1;</span></a>
+<a name="54"><span class="lineNum">      54 </span>                :            : </a>
+<a name="55"><span class="lineNum">      55 </span>  [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 13263 times"> + </span><span class="branchNoCov" title="Branch 2 was not taken"> - </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span> :<span class="lineCov">      13263 :     if (rev &lt; EVMC_BERLIN &amp;&amp; !tx.access_list.empty())</span></a>
+<span class="lineNum">         </span>         <span class="branchNoCov" title="Branch 4 was not taken"> - </span><span class="branchCov" title="Branch 5 was taken 13263 times"> + </span>]
+<a name="56"><span class="lineNum">      56 </span>                :<span class="lineNoCov">          0 :         return -1;</span></a>
+<a name="57"><span class="lineNum">      57 </span>                :            : </a>
+<a name="58"><span class="lineNum">      58 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 13263 times"> + </span>]:<span class="lineCov">      13263 :     if (tx.max_priority_gas_price &gt; tx.max_gas_price)</span></a>
+<a name="59"><span class="lineNum">      59 </span>                :<span class="lineNoCov">          0 :         return -1;  // Priority gas price is too high.</span></a>
+<a name="60"><span class="lineNum">      60 </span>                :            : </a>
+<a name="61"><span class="lineNum">      61 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 13263 times"> + </span>]:<span class="lineCov">      13263 :     if (tx.gas_limit &gt; block.gas_limit)</span></a>
+<a name="62"><span class="lineNum">      62 </span>                :<span class="lineNoCov">          0 :         return -1;</span></a>
+<a name="63"><span class="lineNum">      63 </span>                :            : </a>
+<a name="64"><span class="lineNum">      64 </span>  [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 13263 times"> + </span><span class="branchNoCov" title="Branch 2 was not taken"> - </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span> :<span class="lineCov">      13263 :     if (rev &gt;= EVMC_LONDON &amp;&amp; tx.max_gas_price &lt; block.base_fee)</span></a>
+<span class="lineNum">         </span>         <span class="branchNoCov" title="Branch 4 was not taken"> - </span><span class="branchCov" title="Branch 5 was taken 13263 times"> + </span>]
+<a name="65"><span class="lineNum">      65 </span>                :<span class="lineNoCov">          0 :         return -1;</span></a>
+<a name="66"><span class="lineNum">      66 </span>                :            : </a>
+<a name="67"><span class="lineNum">      67 </span>  [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 13263 times"> + </span><span class="branchNoCov" title="Branch 2 was not taken"> - </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span> :<span class="lineCov">      13263 :     if (rev &gt;= EVMC_SHANGHAI &amp;&amp; !tx.to &amp;&amp; tx.data.size() &gt; 0xC000)</span></a>
+<span class="lineNum">         </span>   <span class="branchNoCov" title="Branch 4 was not taken"> - </span><span class="branchNoCov" title="Branch 5 was not taken"> - </span><span class="branchNoCov" title="Branch 6 was not taken"> - </span><span class="branchCov" title="Branch 7 was taken 13263 times"> + </span>]
+<a name="68"><span class="lineNum">      68 </span>                :<span class="lineNoCov">          0 :         return -1;</span></a>
+<a name="69"><span class="lineNum">      69 </span>                :            : </a>
+<a name="70"><span class="lineNum">      70 </span>        [<span class="branchCov" title="Branch 0 was taken 5 times"> + </span><span class="branchCov" title="Branch 1 was taken 13258 times"> + </span>]:<span class="lineCov">      13263 :     if (!sender_acc.code.empty())</span></a>
+<a name="71"><span class="lineNum">      71 </span>                :<span class="lineCov">          5 :         return -1;  // Origin must not be a contract (EIP-3607).</span></a>
+<a name="72"><span class="lineNum">      72 </span>                :            : </a>
+<a name="73"><span class="lineNum">      73 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 13258 times"> + </span>]:<span class="lineCov">      13258 :     if (sender_acc.nonce == Account::NonceMax)</span></a>
+<a name="74"><span class="lineNum">      74 </span>                :<span class="lineNoCov">          0 :         return -1;</span></a>
+<a name="75"><span class="lineNum">      75 </span>                :            : </a>
+<a name="76"><span class="lineNum">      76 </span>                :            :     // Compute and check if sender has enough balance for the theoretical maximum transaction cost.</a>
+<a name="77"><span class="lineNum">      77 </span>                :            :     // Note this is different from tx_max_cost computed with effective gas price later.</a>
+<a name="78"><span class="lineNum">      78 </span>                :            :     // The computation cannot overflow if done with 512-bit precision.</a>
+<a name="79"><span class="lineNum">      79 </span>        [<span class="branchCov" title="Branch 0 was taken 2 times"> + </span><span class="branchCov" title="Branch 1 was taken 13256 times"> + </span>]:<span class="lineCov">      13258 :     if (const auto tx_cost_limit_512 =</span></a>
+<a name="80"><span class="lineNum">      80 </span>                :<span class="lineCov">      13258 :             umul(intx::uint256{tx.gas_limit}, tx.max_gas_price) + tx.value;</span></a>
+<a name="81"><span class="lineNum">      81 </span>                :<span class="lineCov">      13258 :         sender_acc.balance &lt; tx_cost_limit_512)</span></a>
+<a name="82"><span class="lineNum">      82 </span>                :<span class="lineCov">          2 :         return -1;</span></a>
+<a name="83"><span class="lineNum">      83 </span>                :            : </a>
+<a name="84"><span class="lineNum">      84 </span>                :<span class="lineCov">      13256 :     return tx.gas_limit - compute_tx_intrinsic_cost(rev, tx);</span></a>
+<a name="85"><span class="lineNum">      85 </span>                :            : }</a>
+<a name="86"><span class="lineNum">      86 </span>                :            : </a>
+<a name="87"><span class="lineNum">      87 </span>                :<span class="lineCov">      13255 : evmc_message build_message(const Transaction&amp; tx, int64_t execution_gas_limit) noexcept</span></a>
+<a name="88"><span class="lineNum">      88 </span>                :            : {</a>
+<a name="89"><span class="lineNum">      89 </span>        [<span class="branchCov" title="Branch 0 was taken 6969 times"> + </span><span class="branchCov" title="Branch 1 was taken 6286 times"> + </span>]:<span class="lineCov">      13255 :     const auto recipient = tx.to.has_value() ? *tx.to : evmc::address{};</span></a>
+<a name="90"><span class="lineNum">      90 </span>                :            :     return {</a>
+<a name="91"><span class="lineNum">      91 </span>        [<span class="branchCov" title="Branch 0 was taken 6969 times"> + </span><span class="branchCov" title="Branch 1 was taken 6286 times"> + </span>]:<span class="lineCov">      13255 :         tx.to.has_value() ? EVMC_CALL : EVMC_CREATE,</span></a>
+<a name="92"><span class="lineNum">      92 </span>                :            :         0,</a>
+<a name="93"><span class="lineNum">      93 </span>                :            :         0,</a>
+<a name="94"><span class="lineNum">      94 </span>                :            :         execution_gas_limit,</a>
+<a name="95"><span class="lineNum">      95 </span>                :            :         recipient,</a>
+<a name="96"><span class="lineNum">      96 </span>                :            :         tx.sender,</a>
+<a name="97"><span class="lineNum">      97 </span>                :<span class="lineCov">      13255 :         tx.data.data(),</span></a>
+<a name="98"><span class="lineNum">      98 </span>                :<span class="lineCov">      13255 :         tx.data.size(),</span></a>
+<a name="99"><span class="lineNum">      99 </span>                :<span class="lineCov">      26510 :         intx::be::store&lt;evmc::uint256be&gt;(tx.value),</span></a>
+<a name="100"><span class="lineNum">     100 </span>                :            :         {},</a>
+<a name="101"><span class="lineNum">     101 </span>                :            :         recipient,</a>
+<a name="102"><span class="lineNum">     102 </span>                :<span class="lineCov">      26510 :     };</span></a>
+<a name="103"><span class="lineNum">     103 </span>                :            : }</a>
+<a name="104"><span class="lineNum">     104 </span>                :            : }  // namespace</a>
+<a name="105"><span class="lineNum">     105 </span>                :            : </a>
+<a name="106"><span class="lineNum">     106 </span>                :<span class="lineCov">      13266 : std::optional&lt;std::vector&lt;Log&gt;&gt; transition(</span></a>
+<a name="107"><span class="lineNum">     107 </span>                :            :     State&amp; state, const BlockInfo&amp; block, const Transaction&amp; tx, evmc_revision rev, evmc::VM&amp; vm)</a>
+<a name="108"><span class="lineNum">     108 </span>                :            : {</a>
+<a name="109"><span class="lineNum">     109 </span>                :<span class="lineCov">      13266 :     auto&amp; sender_acc = state.get(tx.sender);</span></a>
+<a name="110"><span class="lineNum">     110 </span>                :<span class="lineCov">      13266 :     const auto execution_gas_limit = validate_transaction(sender_acc, block, tx, rev);</span></a>
+<a name="111"><span class="lineNum">     111 </span>        [<span class="branchCov" title="Branch 0 was taken 11 times"> + </span><span class="branchCov" title="Branch 1 was taken 13255 times"> + </span>]:<span class="lineCov">      13266 :     if (execution_gas_limit &lt; 0)</span></a>
+<a name="112"><span class="lineNum">     112 </span>                :<span class="lineCov">         11 :         return {};</span></a>
+<a name="113"><span class="lineNum">     113 </span>                :            : </a>
+<a name="114"><span class="lineNum">     114 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 13255 times"> + </span>]:<span class="lineCov">      13255 :     const auto base_fee = (rev &gt;= EVMC_LONDON) ? block.base_fee : 0;</span></a>
+<a name="115"><span class="lineNum">     115 </span>                :            :     assert(tx.max_gas_price &gt;= base_fee);                   // Checked at the front.</a>
+<a name="116"><span class="lineNum">     116 </span>                :            :     assert(tx.max_gas_price &gt;= tx.max_priority_gas_price);  // Checked at the front.</a>
+<a name="117"><span class="lineNum">     117 </span>                :            :     const auto priority_gas_price =</a>
+<a name="118"><span class="lineNum">     118 </span>                :<span class="lineCov">      13255 :         std::min(tx.max_priority_gas_price, tx.max_gas_price - base_fee);</span></a>
+<a name="119"><span class="lineNum">     119 </span>                :<span class="lineCov">      13255 :     const auto effective_gas_price = base_fee + priority_gas_price;</span></a>
+<a name="120"><span class="lineNum">     120 </span>                :            : </a>
+<a name="121"><span class="lineNum">     121 </span>                :            :     assert(effective_gas_price &lt;= tx.max_gas_price);</a>
+<a name="122"><span class="lineNum">     122 </span>                :<span class="lineCov">      13255 :     const auto tx_max_cost = tx.gas_limit * effective_gas_price;</span></a>
+<a name="123"><span class="lineNum">     123 </span>                :            : </a>
+<a name="124"><span class="lineNum">     124 </span>                :<span class="lineCov">      13255 :     sender_acc.balance -= tx_max_cost;  // Modify sender balance after all checks.</span></a>
+<a name="125"><span class="lineNum">     125 </span>                :            : </a>
+<a name="126"><span class="lineNum">     126 </span>                :<span class="lineCov">      13255 :     Host host{rev, vm, state, block, tx};</span></a>
+<a name="127"><span class="lineNum">     127 </span>                :            : </a>
+<a name="128"><span class="lineNum">     128 </span>                :<span class="lineCov">      13255 :     sender_acc.access_status = EVMC_ACCESS_WARM;  // Tx sender is always warm.</span></a>
+<a name="129"><span class="lineNum">     129 </span>        [<span class="branchCov" title="Branch 0 was taken 6969 times"> + </span><span class="branchCov" title="Branch 1 was taken 6286 times"> + </span>]:<span class="lineCov">      13255 :     if (tx.to.has_value())</span></a>
+<a name="130"><span class="lineNum">     130 </span>                :<span class="lineCov">       6969 :         host.access_account(*tx.to);</span></a>
+<a name="131"><span class="lineNum">     131 </span>        [<span class="branchCov" title="Branch 0 was taken 127 times"> + </span><span class="branchCov" title="Branch 1 was taken 13255 times"> + </span>]:<span class="lineCov">      13382 :     for (const auto&amp; [a, storage_keys] : tx.access_list)</span></a>
+<a name="132"><span class="lineNum">     132 </span>                :            :     {</a>
+<a name="133"><span class="lineNum">     133 </span>                :<span class="lineCov">        127 :         host.access_account(a);  // TODO: Return account ref.</span></a>
+<a name="134"><span class="lineNum">     134 </span>                :<span class="lineCov">        127 :         auto&amp; storage = state.get(a).storage;</span></a>
+<a name="135"><span class="lineNum">     135 </span>        [<span class="branchCov" title="Branch 0 was taken 230 times"> + </span><span class="branchCov" title="Branch 1 was taken 127 times"> + </span>]:<span class="lineCov">        357 :         for (const auto&amp; key : storage_keys)</span></a>
+<a name="136"><span class="lineNum">     136 </span>        [<span class="branchCov" title="Branch 0 was taken 230 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">        230 :             storage[key].access_status = EVMC_ACCESS_WARM;</span></a>
+<a name="137"><span class="lineNum">     137 </span>                :            :     }</a>
+<a name="138"><span class="lineNum">     138 </span>                :            : </a>
+<a name="139"><span class="lineNum">     139 </span>                :<span class="lineCov">      13255 :     const auto result = host.call(build_message(tx, execution_gas_limit));</span></a>
+<a name="140"><span class="lineNum">     140 </span>                :            : </a>
+<a name="141"><span class="lineNum">     141 </span>                :<span class="lineCov">      13255 :     auto gas_used = tx.gas_limit - result.gas_left;</span></a>
+<a name="142"><span class="lineNum">     142 </span>                :            : </a>
+<a name="143"><span class="lineNum">     143 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 13255 times"> + </span>]:<span class="lineCov">      13255 :     const auto max_refund_quotient = rev &gt;= EVMC_LONDON ? 5 : 2;</span></a>
+<a name="144"><span class="lineNum">     144 </span>                :<span class="lineCov">      13255 :     const auto refund_limit = gas_used / max_refund_quotient;</span></a>
+<a name="145"><span class="lineNum">     145 </span>                :<span class="lineCov">      13255 :     const auto refund = std::min(result.gas_refund, refund_limit);</span></a>
+<a name="146"><span class="lineNum">     146 </span>                :<span class="lineCov">      13255 :     gas_used -= refund;</span></a>
+<a name="147"><span class="lineNum">     147 </span>                :            :     assert(gas_used &gt; 0);</a>
+<a name="148"><span class="lineNum">     148 </span>                :            : </a>
+<a name="149"><span class="lineNum">     149 </span>                :<span class="lineCov">      13255 :     state.get(tx.sender).balance += tx_max_cost - gas_used * effective_gas_price;</span></a>
+<a name="150"><span class="lineNum">     150 </span>        [<span class="branchCov" title="Branch 0 was taken 13255 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">      13255 :     state.touch(block.coinbase).balance += gas_used * priority_gas_price;</span></a>
+<a name="151"><span class="lineNum">     151 </span>                :            : </a>
+<a name="152"><span class="lineNum">     152 </span>                :            :     // Apply destructs and clear erasable empty accounts.</a>
+<a name="153"><span class="lineNum">     153 </span>        [<span class="branchCov" title="Branch 0 was taken 13255 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">      13255 :     std::erase_if(state.get_accounts(), [rev](const std::pair&lt;const address, Account&gt;&amp; p) noexcept {</span></a>
+<a name="154"><span class="lineNum">     154 </span>                :<span class="lineCov">     150020 :         const auto&amp; acc = p.second;</span></a>
+<a name="155"><span class="lineNum">     155 </span>  [<span class="branchCov" title="Branch 0 was taken 149678 times"> + </span><span class="branchCov" title="Branch 1 was taken 342 times"> + </span><span class="branchCov" title="Branch 2 was taken 149678 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span> :<span class="lineCov">     150020 :         return acc.destructed || (rev &gt;= EVMC_SPURIOUS_DRAGON &amp;&amp; acc.erasable &amp;&amp; acc.is_empty());</span></a>
+<span class="lineNum">         </span>   <span class="branchCov" title="Branch 4 was taken 45592 times"> + </span><span class="branchCov" title="Branch 5 was taken 104086 times"> + </span><span class="branchCov" title="Branch 6 was taken 4771 times"> + </span><span class="branchCov" title="Branch 7 was taken 40821 times"> + </span>]
+<a name="156"><span class="lineNum">     156 </span>                :            :     });</a>
+<a name="157"><span class="lineNum">     157 </span>                :            : </a>
+<a name="158"><span class="lineNum">     158 </span>                :<span class="lineCov">      13255 :     return host.take_logs();</span></a>
+<a name="159"><span class="lineNum">     159 </span>                :<span class="lineCov">      13255 : }</span></a>
+<a name="160"><span class="lineNum">     160 </span>                :            : }  // namespace evmone::state</a>
+</pre>
+      </td>
+    </tr>
+  </table>
+  <br>
+
+  <table width="100%" border=0 cellspacing=0 cellpadding=0>
+    <tr><td class="ruler"><img src="../../../../../../../glass.png" width=3 height=3 alt=""></td></tr>
+    <tr><td class="versionInfo">Generated by: <a href="https://github.com/linux-test-project/lcov" target="_parent">LCOV version 1.16</a></td></tr>
+  </table>
+  <br>
+
+</body>
+</html>
