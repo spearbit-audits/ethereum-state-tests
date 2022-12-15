@@ -145,7 +145,7 @@ log0:
     - :label logTwice         :abi f(uint) 10
 
     gasLimit:
-    - '80000000'
+    - '29000000'
     gasPrice: '10'
     nonce: '0'
     to: cccccccccccccccccccccccccccccccccccccccc

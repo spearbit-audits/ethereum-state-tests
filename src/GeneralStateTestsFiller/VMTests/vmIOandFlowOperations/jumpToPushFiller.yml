@@ -1835,7 +1835,7 @@ jumpToPush:
     - :label jump-fail    :abi f(uint) 0x20C
 
     gasLimit:
-    - '80000000'
+    - '29000000'
     gasPrice: '10'
     nonce: '0'
     to: cccccccccccccccccccccccccccccccccccccccc

@@ -81,7 +81,7 @@ mload:
     - :label mloadOOG :abi f(uint) 1
     - :label mloadOOG :abi f(uint) 2
     gasLimit:
-    - '80000000'
+    - '29000000'
     gasPrice: '10'
     nonce: '0'
     to: cccccccccccccccccccccccccccccccccccccccc
