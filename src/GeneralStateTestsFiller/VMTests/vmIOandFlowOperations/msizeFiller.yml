@@ -140,9 +140,9 @@ msize:
     - :label chunks   :abi f(uint) 4
 
     # Off in hyperspace, is the chunk size still 0x20?
-    - :label farChunk :abi f(uint) 5 
+    # - :label farChunk :abi f(uint) 5 
     gasLimit:
-    - 0x10000000
+    - 29000000
     gasPrice: '10'
     nonce: '0'
     to: cccccccccccccccccccccccccccccccccccccccc
@@ -213,15 +213,15 @@ msize:
 
 
 
-    - indexes:
-        data: 
-        - :label farChunk
-        gas:  !!int -1
-        value: !!int -1
-      network:
-        - '>=Istanbul'
-      result:
-        cccccccccccccccccccccccccccccccccccccccc:
-          storage:
-            0x00: 0xb00020
+    # - indexes:
+    #     data: 
+    #     - :label farChunk
+    #     gas:  !!int -1
+    #     value: !!int -1
+    #   network:
+    #     - '>=Istanbul'
+    #   result:
+    #     cccccccccccccccccccccccccccccccccccccccc:
+    #       storage:
+    #         0x00: 0xb00020
 
