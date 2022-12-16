@@ -74,14 +74,14 @@ loopMul:
 
   transaction:
     data:
-    - :label add-10M    :abi testAdd(uint256,uint256,uint256) 0x8edad8b55b1586805ea8c245d8c16b06a5102b791fc6eb60693731c0677bf501 0x8edad8b55b1586805ea8c245d8c16b06a5102b791fc6eb60693731c0677bf501 10000000
-    - :label divadd-10M :abi testDivAdd(uint256,uint256,uint256,uint256) 0x8edad8b55b1586805ea8c245d8c16b06a5102b791fc6eb60693731c0677bf501 0x1c68db1c179cd35ab3fc60c63704aa7fcbea40f19782b1611aaba86726a7686c 0xff00ffffffffffffffffffffffffffaaffffffffffffffffbbffffffffffffff0000 10000000
+    - :label add-10M    :abi testAdd(uint256,uint256,uint256) 0x8edad8b55b1586805ea8c245d8c16b06a5102b791fc6eb60693731c0677bf501 0x8edad8b55b1586805ea8c245d8c16b06a5102b791fc6eb60693731c0677bf501 100000
+    - :label divadd-10M :abi testDivAdd(uint256,uint256,uint256,uint256) 0x8edad8b55b1586805ea8c245d8c16b06a5102b791fc6eb60693731c0677bf501 0x1c68db1c179cd35ab3fc60c63704aa7fcbea40f19782b1611aaba86726a7686c 0xff00ffffffffffffffffffffffffffaaffffffffffffffffbbffffffffffffff0000 10000
     # Skipped the unrolled divadd test, because the source is missing
     # Skipped mul, because we don't have the source. 
     #        The old test has two parameters, the function here three
-    - :label mulmod-2M  :abi testMulMod(uint256,uint256,uint256,uint256) 0x8edad8b55b1586805ea8c245d8c16b06a5102b791fc6eb60693731c0677bf501 0x1c68db1c179cd35ab3fc60c63704aa7fcbea40f19782b1611aaba86726a7686c 0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff 2000000 
+    - :label mulmod-2M  :abi testMulMod(uint256,uint256,uint256,uint256) 0x8edad8b55b1586805ea8c245d8c16b06a5102b791fc6eb60693731c0677bf501 0x1c68db1c179cd35ab3fc60c63704aa7fcbea40f19782b1611aaba86726a7686c 0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff 20000
     gasLimit:
-    - 0x7fffffffffffffff
+    - '29000000'
     gasPrice: '10'
     nonce: '0'
     to: cccccccccccccccccccccccccccccccccccccccc
@@ -100,7 +100,7 @@ loopMul:
       result:
         cccccccccccccccccccccccccccccccccccccccc:
           storage:
-            0: 0xe2ef8b895ee03259ee57850b1a1ed4aa7689bec352659200e63440303f9d0b81
+            0: 0x3dc692d1137126f0a0189623fab06ea47165dd9606aee7ec418167a7ec349ba1
 
 
 
@@ -132,7 +132,7 @@ loopMul:
       result:
         cccccccccccccccccccccccccccccccccccccccc:
           storage:
-            0: 0x0e1c6aac6663c379a52d9ccc7ba4757131020772d41447dfcf478cf9fb0c2bbf
+            0: 0xb35bb01e04add2d25b14d6dfc4e9d16f438eecfc5a0c2af4eedca547b7ec648a
 
 
 
