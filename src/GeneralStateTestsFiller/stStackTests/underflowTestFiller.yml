@@ -2037,7 +2037,7 @@ underflowTest:
 
 
     gasLimit:
-    - '80000000'
+    - '29000000'
     gasPrice: '10'
     nonce: '0'
     to: cccccccccccccccccccccccccccccccccccccccc
@@ -4538,4 +4538,3 @@ underflowTest:
         0000000000000000000000000000000000009f11:
           storage:
             0x01: 0x01
-
