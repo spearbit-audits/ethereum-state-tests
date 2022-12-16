@@ -93,7 +93,7 @@ random:
     - :label random5  :abi f(uint) 5
 
     gasLimit:
-    - '80000000'
+    - '29000000'
     gasPrice: '10'
     nonce: '0'
     to: cccccccccccccccccccccccccccccccccccccccc
