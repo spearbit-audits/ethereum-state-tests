@@ -10,6 +10,7 @@ add:
     currentNumber: 1
     currentTimestamp: 1000
     previousHash: 5e20a0453cecd065ea59c37ac63e079ee08998b6045136a8ce6635c7912ec0b6
+    currentBaseFee: 10
 
   _info:
     comment: Ori Pomerantz qbzzt1@gmail.com
@@ -102,7 +103,7 @@ add:
     - :label add_0_0       :abi f(uint) 3
     - :label add_1_neg1    :abi f(uint) 4
     gasLimit:
-    - '80000000'
+    - 200000
     gasPrice: '10'
     nonce: '0'
     to: cccccccccccccccccccccccccccccccccccccccc
@@ -117,7 +118,7 @@ add:
         gas:  !!int -1
         value: !!int -1
       network:
-        - '>=Istanbul'
+        - 'Berlin'
       result:
         0000000000000000000000000000000000000100:
           storage:
@@ -130,7 +131,7 @@ add:
         gas:  !!int -1
         value: !!int -1
       network:
-        - '>=Istanbul'
+        - 'Berlin'
       result:
         0000000000000000000000000000000000000101:
           storage:
@@ -147,7 +148,7 @@ add:
         gas:  !!int -1
         value: !!int -1
       network:
-        - '>=Istanbul'
+        - 'Berlin'
       result:
         0000000000000000000000000000000000000102:
           storage:
