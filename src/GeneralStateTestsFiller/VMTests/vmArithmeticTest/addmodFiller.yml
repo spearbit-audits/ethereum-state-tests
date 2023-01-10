@@ -201,7 +201,7 @@ addmod:
     - :label addmod_1_0_0        :abi f(uint) 0x0e
     - :label addmod_0_0_0_min_1  :abi f(uint) 0x0f
     gasLimit:
-    - '80000000'
+    - 200000
     gasPrice: '10'
     nonce: '0'
     to: cccccccccccccccccccccccccccccccccccccccc
@@ -216,7 +216,7 @@ addmod:
         gas:  !!int -1
         value: !!int -1
       network:
-        - '>=Istanbul'
+        - 'Berlin'
       result:
         0000000000000000000000000000000000000100:
           storage:
@@ -227,7 +227,7 @@ addmod:
         gas:  !!int -1
         value: !!int -1
       network:
-        - '>=Istanbul'
+        - 'Berlin'
       result:
         0000000000000000000000000000000000000101:
           storage:
@@ -238,7 +238,7 @@ addmod:
         gas:  !!int -1
         value: !!int -1
       network:
-        - '>=Istanbul'
+        - 'Berlin'
       result:
         0000000000000000000000000000000000000102:
           storage:
@@ -249,7 +249,7 @@ addmod:
         gas:  !!int -1
         value: !!int -1
       network:
-        - '>=Istanbul'
+        - 'Berlin'
       result:
         0000000000000000000000000000000000000103:
           storage:
@@ -260,7 +260,7 @@ addmod:
         gas:  !!int -1
         value: !!int -1
       network:
-        - '>=Istanbul'
+        - 'Berlin'
       result:
         0000000000000000000000000000000000000104:
           storage:
@@ -271,7 +271,7 @@ addmod:
         gas:  !!int -1
         value: !!int -1
       network:
-        - '>=Istanbul'
+        - 'Berlin'
       result:
         0000000000000000000000000000000000000105:
           storage:
@@ -282,7 +282,7 @@ addmod:
         gas:  !!int -1
         value: !!int -1
       network:
-        - '>=Istanbul'
+        - 'Berlin'
       result:
         0000000000000000000000000000000000000106:
           storage:
@@ -293,7 +293,7 @@ addmod:
         gas:  !!int -1
         value: !!int -1
       network:
-        - '>=Istanbul'
+        - 'Berlin'
       result:
         0000000000000000000000000000000000000107:
           storage:
@@ -304,7 +304,7 @@ addmod:
         gas:  !!int -1
         value: !!int -1
       network:
-        - '>=Istanbul'
+        - 'Berlin'
       result:
         0000000000000000000000000000000000000108:
           storage:
@@ -315,7 +315,7 @@ addmod:
         gas:  !!int -1
         value: !!int -1
       network:
-        - '>=Istanbul'
+        - 'Berlin'
       result:
         0000000000000000000000000000000000000109:
           storage:
@@ -326,7 +326,7 @@ addmod:
         gas:  !!int -1
         value: !!int -1
       network:
-        - '>=Istanbul'
+        - 'Berlin'
       result:
         000000000000000000000000000000000000010a:
           storage:
@@ -337,7 +337,7 @@ addmod:
         gas:  !!int -1
         value: !!int -1
       network:
-        - '>=Istanbul'
+        - 'Berlin'
       result:
         000000000000000000000000000000000000010b:
           storage:
@@ -348,7 +348,7 @@ addmod:
         gas:  !!int -1
         value: !!int -1
       network:
-        - '>=Istanbul'
+        - 'Berlin'
       result:
         000000000000000000000000000000000000010c:
           storage:
@@ -359,7 +359,7 @@ addmod:
         gas:  !!int -1
         value: !!int -1
       network:
-        - '>=Istanbul'
+        - 'Berlin'
       result:
         000000000000000000000000000000000000010d:
           storage:
@@ -370,7 +370,7 @@ addmod:
         gas:  !!int -1
         value: !!int -1
       network:
-        - '>=Istanbul'
+        - 'Berlin'
       result:
         000000000000000000000000000000000000010e:
           storage:
@@ -381,7 +381,7 @@ addmod:
         gas:  !!int -1
         value: !!int -1
       network:
-        - '>=Istanbul'
+        - 'Berlin'
       result:
         000000000000000000000000000000000000010f:
           storage:
