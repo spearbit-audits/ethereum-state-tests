@@ -220,7 +220,7 @@ tooLongReturnDataCopy:
 
 
     gasLimit:
-    - 0x10000000000000
+    - 29000000
     nonce: 1
     to: cccccccccccccccccccccccccccccccccccccccc
     value:
@@ -238,7 +238,7 @@ tooLongReturnDataCopy:
         value: !!int -1
 
       network:
-        - '>=London'
+        - 'Berlin'
       result:
         cccccccccccccccccccccccccccccccccccccccc:
           storage:
@@ -254,7 +254,7 @@ tooLongReturnDataCopy:
         value: !!int -1
 
       network:
-        - '>=London'
+        - 'Berlin'
       result:
         cccccccccccccccccccccccccccccccccccccccc:
           storage:
