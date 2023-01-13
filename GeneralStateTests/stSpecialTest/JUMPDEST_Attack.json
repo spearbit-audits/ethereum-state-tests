@@ -2,13 +2,13 @@
     "JUMPDEST_Attack" : {
         "_info" : {
             "comment" : "",
-            "filling-rpc-server" : "evm version 1.10.21-unstable-692bfd1b-20220630",
-            "filling-tool-version" : "retesteth-0.2.2-testinfo+commit.1e11e5ce.Linux.g++",
-            "generatedTestHash" : "dd702d43d49bc5378e5f95c8f7688d955419f531fc279dc211ecb037d5d6d52d",
-            "lllcversion" : "Version: 0.5.14-develop.2022.6.6+commit.245805fe.Linux.g++",
-            "solidity" : "Version: 0.8.5+commit.a4f2e591.Linux.g++",
+            "filling-rpc-server" : "evm version 1.11.0-unstable-e04d63eb-20230113",
+            "filling-tool-version" : "retesteth-0.2.3-postmerge+commit.801c0d4c.Linux.g++",
+            "generatedTestHash" : "dc24bbef836f45ac272cb948ba44b8db105f5089f385fccf8dfb31e7adbdbedc",
+            "lllcversion" : "Version: 0.5.14-develop.2021.4.29+commit.14c9d5de.Linux.clang",
+            "solidity" : "Version: 0.8.17-develop.2022.9.30+commit.8df45f5f.Linux.clang",
             "source" : "src/GeneralStateTestsFiller/stSpecialTest/JUMPDEST_AttackFiller.json",
-            "sourceHash" : "90324eb45dfbf92774ec0d53fb200bf1c5e8e61393959dacbf36486676398a13"
+            "sourceHash" : "2f101859cdb486543cb161e84488331ecb9d4757d7e1cfe983da103638f1e8ac"
         },
         "env" : {
             "currentBaseFee" : "0x0a",
@@ -23,50 +23,62 @@
         "post" : {
             "Berlin" : [
                 {
-                    "hash" : "0x8b99d2c11d7de1c7b96257d1ae944038ec68d88f3033b353bb3c6bc32d31b600",
+                    "hash" : "0xc6b926003d94638e8a27518f85b3e523aba678fc6734fa9465ed0f5d38a3d855",
                     "indexes" : {
                         "data" : 0,
                         "gas" : 0,
                         "value" : 0
                     },
                     "logs" : "0x1dcc4de8dec75d7aab85b567b6ccd41ad312451b948a7413f0a142fd40d49347",
-                    "txbytes" : "0xf864800a8405f5e10094095e7baea6a6c7c4c2dfeb977efac326af552d87830186a0801ba08b2abe6f44d5ee4dfa6c9a76e87184930cac7185339c1506343ebfe4b6e32c71a078474f81ddbb08664594bff4afa50f9086a2385ff922a84e76549abd3e43543c"
+                    "txbytes" : "0xf864800a8401ba814094095e7baea6a6c7c4c2dfeb977efac326af552d87830186a0801ca045290492190ac3f5aae05372e9fa01961db4bb2e501247e022e8988b2b11d76ea07ab74926085f718b1fa46746680867b54cef512f286726057463b3849462c918"
                 }
             ],
             "Istanbul" : [
                 {
-                    "hash" : "0x3dd607aa99018b60384952be68e5daadc36df61ae938b84aa79afb8c49240f28",
+                    "hash" : "0xaadc2d4d756aea161a72b726914e6e11b426a329a91991febbf89929e0f9046d",
                     "indexes" : {
                         "data" : 0,
                         "gas" : 0,
                         "value" : 0
                     },
                     "logs" : "0x1dcc4de8dec75d7aab85b567b6ccd41ad312451b948a7413f0a142fd40d49347",
-                    "txbytes" : "0xf864800a8405f5e10094095e7baea6a6c7c4c2dfeb977efac326af552d87830186a0801ba08b2abe6f44d5ee4dfa6c9a76e87184930cac7185339c1506343ebfe4b6e32c71a078474f81ddbb08664594bff4afa50f9086a2385ff922a84e76549abd3e43543c"
+                    "txbytes" : "0xf864800a8401ba814094095e7baea6a6c7c4c2dfeb977efac326af552d87830186a0801ca045290492190ac3f5aae05372e9fa01961db4bb2e501247e022e8988b2b11d76ea07ab74926085f718b1fa46746680867b54cef512f286726057463b3849462c918"
                 }
             ],
             "London" : [
                 {
-                    "hash" : "0x58d8fc7ade8617131a4f858c379a829e5e2efeb3707c7f0103484dc264ec92ee",
+                    "hash" : "0x34d54208e7c49848af3145f40489402a9d6a60c829dd86a225fd5d899de02d0c",
                     "indexes" : {
                         "data" : 0,
                         "gas" : 0,
                         "value" : 0
                     },
                     "logs" : "0x1dcc4de8dec75d7aab85b567b6ccd41ad312451b948a7413f0a142fd40d49347",
-                    "txbytes" : "0xf864800a8405f5e10094095e7baea6a6c7c4c2dfeb977efac326af552d87830186a0801ba08b2abe6f44d5ee4dfa6c9a76e87184930cac7185339c1506343ebfe4b6e32c71a078474f81ddbb08664594bff4afa50f9086a2385ff922a84e76549abd3e43543c"
+                    "txbytes" : "0xf864800a8401ba814094095e7baea6a6c7c4c2dfeb977efac326af552d87830186a0801ca045290492190ac3f5aae05372e9fa01961db4bb2e501247e022e8988b2b11d76ea07ab74926085f718b1fa46746680867b54cef512f286726057463b3849462c918"
                 }
             ],
             "Merge" : [
                 {
-                    "hash" : "0x58d8fc7ade8617131a4f858c379a829e5e2efeb3707c7f0103484dc264ec92ee",
+                    "hash" : "0x34d54208e7c49848af3145f40489402a9d6a60c829dd86a225fd5d899de02d0c",
                     "indexes" : {
                         "data" : 0,
                         "gas" : 0,
                         "value" : 0
                     },
                     "logs" : "0x1dcc4de8dec75d7aab85b567b6ccd41ad312451b948a7413f0a142fd40d49347",
-                    "txbytes" : "0xf864800a8405f5e10094095e7baea6a6c7c4c2dfeb977efac326af552d87830186a0801ba08b2abe6f44d5ee4dfa6c9a76e87184930cac7185339c1506343ebfe4b6e32c71a078474f81ddbb08664594bff4afa50f9086a2385ff922a84e76549abd3e43543c"
+                    "txbytes" : "0xf864800a8401ba814094095e7baea6a6c7c4c2dfeb977efac326af552d87830186a0801ca045290492190ac3f5aae05372e9fa01961db4bb2e501247e022e8988b2b11d76ea07ab74926085f718b1fa46746680867b54cef512f286726057463b3849462c918"
+                }
+            ],
+            "Shanghai" : [
+                {
+                    "hash" : "0x34d54208e7c49848af3145f40489402a9d6a60c829dd86a225fd5d899de02d0c",
+                    "indexes" : {
+                        "data" : 0,
+                        "gas" : 0,
+                        "value" : 0
+                    },
+                    "logs" : "0x1dcc4de8dec75d7aab85b567b6ccd41ad312451b948a7413f0a142fd40d49347",
+                    "txbytes" : "0xf864800a8401ba814094095e7baea6a6c7c4c2dfeb977efac326af552d87830186a0801ca045290492190ac3f5aae05372e9fa01961db4bb2e501247e022e8988b2b11d76ea07ab74926085f718b1fa46746680867b54cef512f286726057463b3849462c918"
                 }
             ]
         },
@@ -91,7 +103,7 @@
                 "0x"
             ],
             "gasLimit" : [
-                "0x05f5e100"
+                "0x01ba8140"
             ],
             "gasPrice" : "0x0a",
             "nonce" : "0x00",
