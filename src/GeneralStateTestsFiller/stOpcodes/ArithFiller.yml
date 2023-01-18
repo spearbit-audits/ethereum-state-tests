@@ -81101,7 +81101,7 @@ Arith:
         gas:  !!int -1
         value: !!int -1
       network:
-        - '>=Shanghai'
+        - 'Berlin'
       result:
         cccccccccccccccccccccccccccccccccccccccc:
           storage:
