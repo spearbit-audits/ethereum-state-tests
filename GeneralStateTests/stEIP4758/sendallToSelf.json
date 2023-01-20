@@ -2,12 +2,13 @@
     "sendallToSelf" : {
         "_info" : {
             "comment" : "",
-            "filling-rpc-server" : "evm version 1.10.16-unstable-259df372-20220408",
-            "filling-tool-version" : "retesteth-0.2.1-difficulty+commit.5d84e4d6.Linux.g++",
-            "generatedTestHash" : "93a734ae0cfc093f441b54d63ea8c9aeaec81e98cac6f2ffc30baf4b0784a43e",
-            "lllcversion" : "Version: 0.5.14-develop.2022.4.7+commit.401d5358.Linux.g++",
+            "filling-rpc-server" : "evm version 1.11.0-unstable-ae009145-20221017",
+            "filling-tool-version" : "retesteth-0.2.3-postmerge+commit.38dea47d.Linux.g++",
+            "generatedTestHash" : "fd1030b7096aa62b4537ab51932c3c0291ec62292f07f3278bf9183fac2f8c5b",
+            "lllcversion" : "Version: 0.5.14-develop.2021.4.29+commit.14c9d5de.Linux.clang",
+            "solidity" : "Version: 0.8.17-develop.2022.9.30+commit.8df45f5f.Linux.clang",
             "source" : "src/GeneralStateTestsFiller/stEIP4758/sendallToSelfFiller.json",
-            "sourceHash" : "c40e58dbf7b9f7574622425e1ebb909e7560d12eb62353d8699358eb34731d3e"
+            "sourceHash" : "77cb8ee7068efa0ced64965b971376791a590ff24546b5eb87e306dc62e7d378"
         },
         "env" : {
             "currentBaseFee" : "0x0a",
@@ -15,13 +16,14 @@
             "currentDifficulty" : "0x020000",
             "currentGasLimit" : "0x0f4240",
             "currentNumber" : "0x01",
+            "currentRandom" : "0x0000000000000000000000000000000000000000000000000000000000020000",
             "currentTimestamp" : "0x03e8",
             "previousHash" : "0x5e20a0453cecd065ea59c37ac63e079ee08998b6045136a8ce6635c7912ec0b6"
         },
         "post" : {
-            "EIP4758" : [
+            "Berlin" : [
                 {
-                    "hash" : "0xae6526981d45303633e7d335e8a6f2c7d8aa53b2958ad32acbb2f22c27bd530d",
+                    "hash" : "0x658483a2d927be8f9857231eacd46ad4b7122115487114410939f9fe4bf35d0c",
                     "indexes" : {
                         "data" : 0,
                         "gas" : 0,
@@ -59,6 +61,7 @@
             "gasPrice" : "0x0a",
             "nonce" : "0x00",
             "secretKey" : "0x45a915e4d060149eb4365960e6a7a45f334393093061116b197e3240065ff2d8",
+            "sender" : "0xa94f5374fce5edbc8e2a8697c15331677e6ebf0b",
             "to" : "0x095e7baea6a6c7c4c2dfeb977efac326af552d87",
             "value" : [
                 "0x00"
